@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  location: MyString
+  resolved_stat: false
+  description: MyString
+  creater_uid: MyString
+
+two:
+  location: MyString
+  resolved_stat: false
+  description: MyString
+  creater_uid: MyString
