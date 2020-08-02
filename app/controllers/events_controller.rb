@@ -1,4 +1,10 @@
 class EventsController < ApplicationController 
+
+    def index 
+        @events = Event.all 
+        render json: @events.to_json 
+    end 
+
     def create 
         @event = Event.create(event_params)
         # have to think about how to handle creater_uid 

@@ -1,4 +1,9 @@
 class ResponsesController < ApplicationController 
+
+    def index 
+        @responses = Response.all 
+        render json: @responses.to_json 
+    end 
     def create 
         @response = Response.create(response_params)
         render json: @response.to_json
