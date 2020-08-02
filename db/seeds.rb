@@ -8,17 +8,22 @@
 
 Event.destroy_all 
 Response.destroy_all
+User.destroy_all
 
 Event.create(
     location: "123 asdf",
     resolved_stat: false, 
     description: "this and that",
-    creater_uid: "a1b2c3d4"
+    user_id: User.first
 )
 Response.create(
     event: Event.first,
     has_evidence: true, 
-    comment: "omg wow"
+    comment: "omg wow",
+    user_id: User.first
+)
+User.create(
+    uu: "uuid12345"
 )
 
 

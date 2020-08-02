@@ -4,7 +4,7 @@ class CreateEvents < ActiveRecord::Migration[6.0]
       t.string :location
       t.boolean :resolved_stat
       t.string :description
-      t.string :creater_uid
+      t.belongs_to :user, null: false
 
       t.timestamps
     end
