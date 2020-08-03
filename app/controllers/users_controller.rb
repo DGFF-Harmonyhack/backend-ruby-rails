@@ -1,10 +1,38 @@
+require 'securerandom'
+
 class UsersController < ApplicationController 
     def index
         @users = User.all 
         render json: @users.to_json
     end 
 
+    def create 
+        # the default body call should be 
+        # [POST] users/new 
+        @user = User.create(uu: SecureRandom.hex(10))
+
+        @user_final = {
+            id: @user.id, 
+            uuid: @user.uu, 
+            saved_events: [],
+            saved_responses: [],
+            response_index: 1,
+            event_index: 1
+        }
+
+        render json: @user_final.to_json 
+    end 
+
     def show 
+        
+        # the default intial render call should be 
+        # [GET] to users/:id 
+        # {
+        #     "uuid": "uuid",
+        #     "response_index": 1,
+        #     "event_index": 1
+        # }
+
         @user = User.find(params[:id])
         
         @responses = Response.all.select{|response| response.user_id == @user.id}.reverse()
