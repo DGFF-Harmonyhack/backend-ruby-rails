@@ -9,6 +9,7 @@ class UsersController < ApplicationController
     def create 
         # the default body call should be 
         # [POST] users/new 
+        
         @user = User.create(uu: SecureRandom.hex(10))
 
         @user_final = {
@@ -24,6 +25,7 @@ class UsersController < ApplicationController
     end 
 
     def show 
+        # need to add some kind of validation so that uuid acts as a password to compare to the user.id 
         
         # the default intial render call should be 
         # [GET] to users/:id 
