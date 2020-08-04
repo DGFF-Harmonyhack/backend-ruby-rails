@@ -6,19 +6,36 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+require 'securerandom'
+require 'faker'
+
 Event.destroy_all 
 Response.destroy_all
+User.destroy_all
 
-Event.create(
-    location: "123 asdf",
-    resolved_stat: false, 
-    description: "this and that",
-    creater_uid: "a1b2c3d4"
-)
-Response.create(
-    event: Event.first,
-    has_evidence: true, 
-    comment: "omg wow"
-)
 
+5.times do 
+    User.create(
+        uu: SecureRandom.hex(10)
+    )
+end
+
+
+60.times do 
+    Event.create(
+        location: Faker::TvShows::RickAndMorty.location,
+        description: Faker::TvShows::RickAndMorty.quote,
+        user_id: User.all.sample.id
+    )
+end 
+
+60.times do 
+    Response.create(
+        event_id: Event.all.sample.id,
+        has_evidence: true, 
+        comment: Faker::TvShows::RickAndMorty.quote,
+        user_id: User.all.sample.id
+    )
+end 
+ 
 

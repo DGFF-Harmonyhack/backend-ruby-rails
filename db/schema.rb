@@ -10,28 +10,36 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_25_180847) do
+ActiveRecord::Schema.define(version: 2020_08_04_184456) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "events", force: :cascade do |t|
     t.string "location"
-    t.boolean "resolved_stat"
+    t.boolean "resolved_stat", default: false
     t.string "description"
-    t.string "creater_uid"
+    t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_events_on_user_id"
   end
 
   create_table "responses", force: :cascade do |t|
     t.bigint "event_id", null: false
     t.boolean "has_evidence"
     t.string "comment"
+    t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["event_id"], name: "index_responses_on_event_id"
+    t.index ["user_id"], name: "index_responses_on_user_id"
   end
 
-  add_foreign_key "responses", "events"
+  create_table "users", force: :cascade do |t|
+    t.string "uu"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
 end
