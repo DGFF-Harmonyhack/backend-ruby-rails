@@ -6,6 +6,7 @@ class UsersController < ApplicationController
         render json: @users.to_json
     end 
 
+
     def create 
         # the default body call should be 
         # [POST] users/new 

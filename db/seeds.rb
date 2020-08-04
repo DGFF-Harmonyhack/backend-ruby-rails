@@ -24,7 +24,6 @@ end
 60.times do 
     Event.create(
         location: Faker::TvShows::RickAndMorty.location,
-        resolved_stat: false, 
         description: Faker::TvShows::RickAndMorty.quote,
         user_id: User.all.sample.id
     )
