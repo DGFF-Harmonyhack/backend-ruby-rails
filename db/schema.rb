@@ -42,6 +42,7 @@ ActiveRecord::Schema.define(version: 2020_08_06_195245) do
     t.string "uu"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "PushToken"
   end
 
 end
