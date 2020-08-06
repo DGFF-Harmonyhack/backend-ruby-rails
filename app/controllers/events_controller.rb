@@ -1,24 +1,24 @@
-class EventsController < ApplicationController 
+class EventsController < ApplicationController
 
-    def index 
-        @events = Event.all 
-        render json: @events.to_json 
-    end 
+    def index
+        @events = Event.all
+        render json: @events.to_json
+    end
 
-    def create 
+    def create
         @event = Event.create(event_params)
-        # have to think about how to handle creater_uid 
-        # also resolved stat should be false by default until update 
+        # have to think about how to handle creater_uid
+        # also resolved stat should be false by default until update
         render json: @event.to_json
-    end 
+    end
 
-    def show 
+    def show
         @event = Event.find(params[:id])
         render json: @event.to_json
-    end 
+    end
 
-    private 
-    def event_params 
-        params.permit(:location, :description, :user_id)
-    end 
-end 
+    private
+    def event_params
+        params.permit(:location, :description, :user_id, :lat, :long)
+    end
+end

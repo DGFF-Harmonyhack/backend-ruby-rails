@@ -9,33 +9,32 @@
 require 'securerandom'
 require 'faker'
 
-Event.destroy_all 
+Event.destroy_all
 Response.destroy_all
 User.destroy_all
 
 
-5.times do 
+5.times do
     User.create(
         uu: SecureRandom.hex(10)
     )
 end
 
 
-60.times do 
+60.times do
     Event.create(
-        location: Faker::TvShows::RickAndMorty.location,
         description: Faker::TvShows::RickAndMorty.quote,
-        user_id: User.all.sample.id
+        user_id: User.all.sample.id,
+        long: Faker::Address.longitude,
+        lat: Faker::Address.latitude
     )
-end 
+end
 
-60.times do 
+120.times do
     Response.create(
         event_id: Event.all.sample.id,
-        has_evidence: true, 
+        has_evidence: true,
         comment: Faker::TvShows::RickAndMorty.quote,
         user_id: User.all.sample.id
     )
-end 
- 
-
+end
