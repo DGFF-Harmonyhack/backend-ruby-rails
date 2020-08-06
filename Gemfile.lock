@@ -75,10 +75,6 @@ GEM
     concurrent-ruby (1.1.6)
     crass (1.0.6)
     erubi (1.9.0)
-    ethon (0.12.0)
-      ffi (>= 1.3.0)
-    exponent-server-sdk (0.1.0)
-      typhoeus
     faker (2.13.0)
       i18n (>= 1.6, < 2)
     ffi (1.13.1)
@@ -109,7 +105,7 @@ GEM
       mini_portile2 (~> 2.4.0)
     pg (1.2.3)
     public_suffix (4.0.5)
-    puma (4.3.0)
+    puma (4.3.5)
       nio4r (~> 2.0)
     rack (2.2.3)
     rack-cors (1.1.1)
@@ -180,8 +176,6 @@ GEM
     turbolinks (5.2.1)
       turbolinks-source (~> 5.2)
     turbolinks-source (5.2.0)
-    typhoeus (1.4.0)
-      ethon (>= 0.9.0)
     tzinfo (1.2.7)
       thread_safe (~> 0.1)
     web-console (4.0.4)
@@ -212,12 +206,11 @@ DEPENDENCIES
   bootsnap (>= 1.4.2)
   byebug
   capybara (>= 2.15)
-  exponent-server-sdk (~> 0.1.0)
   faker
   jbuilder (~> 2.7)
   listen (~> 3.2)
   pg (>= 0.18, < 2.0)
-  puma (= 4.3)
+  puma (~> 4.1)
   rack-cors
   rails (~> 6.0.3, >= 6.0.3.2)
   sass-rails (>= 6)
