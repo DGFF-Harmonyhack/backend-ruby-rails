@@ -33,7 +33,7 @@ end
 120.times do
     Response.create(
         event_id: Event.all.sample.id,
-        response_type: ["haveEvi", "needEvi", "noEvi", "other"].sample,
+        response_type: ['I have evidence: ', 'I need evidence: ', "I don't have evidence: ", 'Other... See written response: '].sample,
         details: Faker::TvShows::RickAndMorty.quote,
         user_id: User.all.sample.id
     )
