@@ -1,21 +1,21 @@
-class ResponsesController < ApplicationController 
+class ResponsesController < ApplicationController
 
-    def index 
-        @responses = Response.all 
-        render json: @responses.to_json 
-    end 
-    def create 
+    def index
+        @responses = Response.all
+        render json: @responses.to_json
+    end
+    def create
         @response = Response.create(response_params)
         render json: @response.to_json
-    end 
+    end
 
-    def show 
+    def show
         @response = Response.find(params[:id])
         render json: @response.to_json
-    end 
+    end
 
-    private 
-    def response_params 
-        params.permit(:event_id, :has_evidence, :comment)
-    end 
-end 
+    private
+    def response_params
+        params.permit(:event_id, :user_id, :has_evidence, :details)
+    end
+end
