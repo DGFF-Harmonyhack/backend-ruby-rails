@@ -16,6 +16,6 @@ class ResponsesController < ApplicationController
 
     private
     def response_params
-        params.permit(:event_id, :user_id, :has_evidence, :details)
+        params.permit(:event_id, :user_id, :response_type, :details)
     end
 end
