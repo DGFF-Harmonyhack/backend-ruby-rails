@@ -14,7 +14,7 @@ Response.destroy_all
 User.destroy_all
 
 
-5.times do
+10.times do
     User.create(
         uu: SecureRandom.hex(10)
     )
@@ -23,7 +23,7 @@ end
 
 60.times do
     Event.create(
-        # description: Faker::TvShows::RickAndMorty.quote,
+        description: Faker::TvShows::RickAndMorty.quote,
         user_id: User.all.sample.id,
         long: Faker::Address.longitude,
         lat: Faker::Address.latitude
@@ -33,8 +33,8 @@ end
 120.times do
     Response.create(
         event_id: Event.all.sample.id,
-        has_evidence: true,
-        comment: Faker::TvShows::RickAndMorty.quote,
+        response_type: ['I have evidence: ', 'I need evidence: ', "I don't have evidence: ", 'Other... See written response: '].sample,
+        details: Faker::TvShows::RickAndMorty.quote,
         user_id: User.all.sample.id
     )
 end
