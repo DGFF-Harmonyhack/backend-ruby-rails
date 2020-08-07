@@ -17,8 +17,15 @@ class EventsController < ApplicationController
         render json: @event.to_json
     end
 
+    def update 
+        @event = Event.find(params[:id])
+        @event.update(event_params)
+        # byebug
+        render json: @event.to_json 
+    end 
+
     private
     def event_params
-        params.permit(:location, :description, :user_id, :lat, :long)
+        params.permit(:description, :user_id, :lat, :long, :resolved_stat, )
     end
 end

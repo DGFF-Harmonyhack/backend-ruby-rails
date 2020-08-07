@@ -23,7 +23,7 @@ end
 
 60.times do
     Event.create(
-        description: Faker::TvShows::RickAndMorty.quote,
+        # description: Faker::TvShows::RickAndMorty.quote,
         user_id: User.all.sample.id,
         long: Faker::Address.longitude,
         lat: Faker::Address.latitude
