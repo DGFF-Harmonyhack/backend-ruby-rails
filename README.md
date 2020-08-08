@@ -1,4 +1,5 @@
 # README
+![alt text](https://github.com/DGFF-Harmonyhack/Frontend-React-Native/blob/master/logo.png "Record Me")
 
 This Rails project is a backend API for HarmonyHacks 2 on devpost.com
 https://harmonyhacks2.devpost.com/
