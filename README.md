@@ -2,6 +2,7 @@
 
 This Rails project is a backend API for HarmonyHacks 2 on devpost.com
 https://harmonyhacks2.devpost.com/
+We used Postgresql so you must create the db first.
 
 In order to get started:
 1. bundle install 
@@ -14,4 +15,3 @@ The routes are RESTful and the models are
 1. users [:get, :create]
 2. events [:index, :create, :update]
 3. responses [:index, :create]
-
